@@ -1,0 +1,39 @@
+{
+    "name": "Translate Plugin",
+    "description": "This tool is for translation between Chinese and English",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "logo/logo.png",
+        "default_title": "Translater"
+    },
+    "background": {
+        "service_worker": "js/background.js"
+    },
+    "icons": {
+        "16": "logo/logo.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "js/content.js"
+            ]
+        }
+    ],
+    "permissions": [
+        "tabs"
+    ],
+    "commands": {
+        "_execute_action": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+F",
+                "mac": "MacCtrl+Shift+F"
+            },
+            "description": "Opens hello.html"
+        }
+    }
+}
